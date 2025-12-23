@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Public Key - MD. Solaiman Shakil</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="site.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">MD. Solaiman Shakil</div>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#education">Education</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#skills">Skills</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="publickey.html" class="active-link">Public Key</a></li>
+    </ul>
+  </nav>
+
+  <!-- Public Key Section -->
+  <section class="content-section" id="public-key">
+    <h2>My Public Key</h2>
+    <div class="publickey-box">
+      <p>You can use the following public key to send me an encrypted message securely 🔒</p>
+
+      <textarea id="publicKeyBox" readonly>
+-----BEGIN PGP PUBLIC KEY BLOCK----- 
+
+MIIBCgKCAQEAm+Rjsf8yqZYo3djHZTnkpIWTO4VzBmEoFfdxyPTLeQIb+huCYkuw
+p5MAERcyzRIs7K9IHUzo0VmTLe/6EqD6rN+PE8hBMbNOI8AhACalfytyqqWgKDgQ
+Eh9R5TV7hRNRCiwIA5CkTMICT2qqA9dqyZ9stwaOdPrsIDkboRbcKEKWQf+8QhNi
+BT+L+K9SBYkbfMfAcYsJ6qel9LT/eVjv1PFy31SLW0c8A3du28dmfLgIfgFpUKkk
+zptmJS5D/nhUgcV1TKjl0MZss3eZu8evA1S0XJQ2UxQnQvB/G7vTDYDPgr7zykMD
+mrBdR7XJwXsMlf0gID+rpp/phNsQqoFq0wIDAQAB
+
+-----END PGP PUBLIC KEY BLOCK-----
+      </textarea>
+
+      <button class="btn primary-btn" id="copyKeyBtn"><i class="fas fa-copy"></i> Copy Key</button>
+    </div>
+
+    <div class="encryption-info">
+      <h3>💡 How to Send Me a Secure Message</h3>
+      <ol>
+        <li>Copy my public key above.</li>
+        <li>Use any PGP tool (like <a href="https://pgptool.github.io/" target="_blank">PGP Tool</a> or <a href="https://www.gnupg.org/" target="_blank">GnuPG</a>).</li>
+        <li>Encrypt your message using this key.</li>
+        <li>Send the encrypted message to my email: <a href="mailto:solaimanshakil56@gmail.com">solaimanshakil56@gmail.com</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <p>MD. Solaiman Shakil</p>
+        <p>&copy; 2025. All rights reserved.</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://github.com/shakil-solaiman" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/shakil-solaiman/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://facebook.com/shakil.solaiman" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script for copy -->
+  <script>
+    document.getElementById("copyKeyBtn").addEventListener("click", function() {
+      const keyBox = document.getElementById("publicKeyBox");
+      keyBox.select();
+      keyBox.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      this.innerHTML = '<i class="fas fa-check"></i> Copied!';
+      setTimeout(() => { this.innerHTML = '<i class="fas fa-copy"></i> Copy Key'; }, 2000);
+    });
+  </script>
+
+</body>
+</html>
